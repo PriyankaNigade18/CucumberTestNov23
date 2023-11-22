@@ -7,7 +7,9 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(features="src/test/resources/FeatureFiles/Google.feature",
-					glue="stepdef")
+					glue="stepdef"
+					
+					)
 public class GoogleRunner {
 
 }

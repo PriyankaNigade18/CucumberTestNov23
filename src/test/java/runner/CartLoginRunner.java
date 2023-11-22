@@ -6,9 +6,10 @@ import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features="src/test/resources/FeatureFiles/Crm.feature",
-					glue={"stepdef","hooksDemo"},
-					publish=true)
-public class CrmRunner {
+@CucumberOptions(features="src/test/resources/FeatureFiles/CartLogin.feature",
+					glue="stepdef"
+					
+					)
+public class CartLoginRunner {
 
 }

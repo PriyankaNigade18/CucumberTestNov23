@@ -7,17 +7,23 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 
+import hooksDemo.BrowserSetup;
 import io.cucumber.java.en.*;
 
 public class CRMStep 
 {
-	WebDriver driver;
+	
+	 WebDriver driver=BrowserSetup.getDriver();
+	
 
 @Given("Open CRM application")
-public void open_crm_application() {
-    driver=new ChromeDriver();
-    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-    driver.get("https://automationplayground.com/crm/");
+public void open_crm_application()
+{
+//    driver=new ChromeDriver();
+	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+//    driver.get("https://automationplayground.com/crm/");
+	
+	
 }
 
 @When("I click on SignIn link")
@@ -32,6 +38,8 @@ public void sign_in_page_should_open() {
     Assert.assertTrue(driver.getCurrentUrl().contains("login"),"Link is not working");
     System.out.println("SignIn lik works...SignIn page open");
 }
+
+
 
 @When("I enter valid emailid {string} and valid password {string}")
 public void i_enter_valid_emailid_and_valid_password(String email, String psw)
