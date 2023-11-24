@@ -13,7 +13,7 @@ import io.cucumber.java.en.*;
 public class CRMStep 
 {
 	
-	 WebDriver driver=BrowserSetup.getDriver();
+	public WebDriver driver=BrowserSetup.getDriver();
 	
 
 @Given("Open CRM application")
@@ -44,7 +44,7 @@ public void sign_in_page_should_open() {
 @When("I enter valid emailid {string} and valid password {string}")
 public void i_enter_valid_emailid_and_valid_password(String email, String psw)
 {
-	driver.findElement(By.id("SignIn")).click();
+	//driver.findElement(By.id("SignIn")).click();
 	driver.findElement(By.id("email-id")).sendKeys(email);
 	driver.findElement(By.id("password")).sendKeys(psw);
 	
@@ -63,13 +63,13 @@ Assert.assertTrue(driver.getCurrentUrl().contains("customers"),"Login fail");
 System.out.println("Login completed!...customers page is open");
 }
 
-@Given("User should be login")
-public void user_should_be_login() {
-	driver.findElement(By.id("SignIn")).click();
-	driver.findElement(By.id("email-id")).sendKeys("test@gmail.com");
-	driver.findElement(By.id("password")).sendKeys("test123");
-	driver.findElement(By.id("submit-id")).click();
-}
+//@Given("User should be login")
+//public void user_should_be_login() {
+//	driver.findElement(By.id("SignIn")).click();
+//	driver.findElement(By.id("email-id")).sendKeys("test@gmail.com");
+//	driver.findElement(By.id("password")).sendKeys("test123");
+//	driver.findElement(By.id("submit-id")).click();
+//}
 
 
 @When("I login into application click on Signout link")

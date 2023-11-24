@@ -29,11 +29,17 @@ public class CartStep
 	    //
 	    // For other transformations you can register a DataTableType.
 	  // List<Map<String,String>> data=table.asMaps();
-		List<List<String>> data=table.cells();
-		driver.findElement(By.id("input-email")).sendKeys(data.get(1).get(0));
-	   driver.findElement(By.name("password")).sendKeys(data.get(1).get(1));
+		
+		
+		List<Map<String,String>> map=table.asMaps(String.class,String.class);
+		driver.findElement(By.id("input-email")).sendKeys(map.get(0).get("email"));
+	    driver.findElement(By.name("password")).sendKeys(map.get(0).get("pas"));
+
 	   
-	   
+//		List<List<String>> data=table.cells();
+//		driver.findElement(By.id("input-email")).sendKeys(data.get(0).get(1));
+//		driver.findElement(By.name("password")).sendKeys(data.get(1).get(1));
+
 	 
 	}
 
